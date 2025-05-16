@@ -10,8 +10,8 @@ Accept: application/json
 Content-Type: application/json
 
 {
-    "username":"melisamolina@gmail.com",
-    "typeError": 2,
+    "username":"melisamolina3@gmail.com",
+    "typeError": 3,
     "detailError": "El email no funciona"
 }
 
@@ -26,3 +26,10 @@ Content-Type: application/json
     "ticketType":4,
     "description":"Casi se soluciona pero no"
 }
+
+###
+
+DELETE {{Ticketing.Command_HostAddress}}/api/ticket/0196da71-38ba-77d6-a45b-c47cf1e48eae
+Accept: application/json
+Content-Type: application/json
+

@@ -31,6 +31,7 @@ namespace Ticketing.Query.Infrastructure.Converters
             {
                 nameof(TicketCreatedEvent) => JsonSerializer.Deserialize<TicketCreatedEvent>(json, options),
                 nameof(TicketUpdatedEvent) => JsonSerializer.Deserialize<TicketUpdatedEvent>(json, options),
+                nameof(TicketDeletedEvent) => JsonSerializer.Deserialize<TicketDeletedEvent>(json, options),
                 _ => throw new JsonException($"Event type {typeDiscriminator} not implemented")
             };
         }

@@ -33,5 +33,11 @@ namespace Ticketing.Query.Infrastructure.Handlers
                 @event.Description!);
             await _mediator.Send(ticketUpdatedEvent);
         }
+
+        public async Task On(TicketDeletedEvent @event)
+        {
+            var ticketDeleteCommand = new TicketDelete.TicketDeleteCommand(@event.Id);
+            await _mediator.Send(ticketDeleteCommand);
+        }
     }
 }

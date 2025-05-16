@@ -18,6 +18,7 @@ namespace Ticketing.Command.Infrastructure
             BsonClassMap.RegisterClassMap<BaseEvent>();
             BsonClassMap.RegisterClassMap<TicketCreatedEvent>();
             BsonClassMap.RegisterClassMap<TicketUpdatedEvent>();
+            BsonClassMap.RegisterClassMap<TicketDeletedEvent>();
             services.AddScoped(typeof(IMongoRepository<>), typeof(MongoRepository<>));
             services.AddTransient<IEventModelRepository, EventModelRepository>();
             services.AddSingleton<IMongoClient, MongoClient>(s => new MongoClient(configuration.GetConnectionString("MongoDb")));

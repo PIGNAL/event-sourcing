@@ -10,8 +10,9 @@ namespace Ticketing.Command.Application.Aggregates
 
         public TicketAggregate()
         {
-            
+
         }
+
         public TicketAggregate(TicketCreate.TicketCreateCommand command)
         {
             var ticketCreatedEvent = new TicketCreatedEvent
@@ -25,7 +26,17 @@ namespace Ticketing.Command.Application.Aggregates
             RaiseEvent(ticketCreatedEvent);
         }
 
-        public void Apply(TicketCreatedEvent @event)
+        public TicketAggregate(TicketDelete.TicketDeleteCommand command)
+        {
+            var ticketDeletedEvent = new TicketDeletedEvent
+            {
+                Id = command.Id
+            };
+
+            RaiseEvent(ticketDeletedEvent);
+        }
+
+    public void Apply(TicketCreatedEvent @event)
         {
             _id = @event.Id;
             Active = true;
@@ -50,6 +61,12 @@ namespace Ticketing.Command.Application.Aggregates
         public void Apply(TicketUpdatedEvent @event)
         {
             _id = @event.Id;
+        }
+
+        public void Apply(TicketDeletedEvent @event)
+        {
+            _id = @event.Id;
+            Active = false;
         }
     }
 }
