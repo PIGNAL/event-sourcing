@@ -1,0 +1,28 @@
+@Ticketing.Command_HostAddress = http://localhost:5001
+
+GET {{Ticketing.Command_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
+
+POST {{Ticketing.Command_HostAddress}}/api/ticket
+Accept: application/json
+Content-Type: application/json
+
+{
+    "username":"melisamolina@gmail.com",
+    "typeError": 2,
+    "detailError": "El email no funciona"
+}
+
+###
+
+PUT {{Ticketing.Command_HostAddress}}/api/ticket/0196cfd5-25c6-7e13-b0b5-c1d40f33b783
+Accept: application/json
+Content-Type: application/json
+
+{
+    "username":"priscyballatore@gmail.com",
+    "ticketType":4,
+    "description":"Casi se soluciona pero no"
+}
