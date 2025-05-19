@@ -36,7 +36,7 @@ namespace Ticketing.Command.Application.Aggregates
             RaiseEvent(ticketDeletedEvent);
         }
 
-    public void Apply(TicketCreatedEvent @event)
+        public void Apply(TicketCreatedEvent @event)
         {
             _id = @event.Id;
             Active = true;
@@ -45,7 +45,7 @@ namespace Ticketing.Command.Application.Aggregates
         public void EditTicket(int ticketType, string description, string userName)
         {
             if (!Active)
-            { 
+            {
                 throw new InvalidOperationException("Cannot edit an inactive ticket.");
             }
 
