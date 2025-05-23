@@ -7,7 +7,7 @@ using Ticketing.Command.Features.Apis;
 
 namespace Ticketing.Command.Features.Tickets
 {
-    public class TicketDelete :IMinimalApi
+    public class TicketDelete : IMinimalApi
     {
         public void AddEndpoint(IEndpointRouteBuilder endpointRouteBuilder)
         {

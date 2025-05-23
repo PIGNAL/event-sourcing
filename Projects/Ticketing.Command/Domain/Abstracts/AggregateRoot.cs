@@ -28,7 +28,7 @@ namespace Ticketing.Command.Domain.Abstracts
         public void MarkChangesAsCommitted()
         {
             _changes.Clear();
-        }
+        }   
 
         public void RaiseEvent(BaseEvent @event)
         {

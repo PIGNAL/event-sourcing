@@ -5,7 +5,7 @@ using Ticketing.Command.Domain.Abstracts;
 using Ticketing.Command.Features.Tickets;
 using Xunit;
 
-namespace Tests.Ticketing.Command.Application.Aggregates
+namespace Microservices.Ticketing.Command.UnitTests.Application.Aggregates
 {
 
     public class TicketAggregateTests
@@ -14,6 +14,14 @@ namespace Tests.Ticketing.Command.Application.Aggregates
         const string UserName = "joniballatore@gmail.com";
         const int TypeError = 1;
         const string DetailError = "because connexion is bad";
+
+        [Fact]
+        public void TestConstructor()
+        {
+            var aggregate = new TicketAggregate();
+            Assert.NotNull(aggregate);
+        }
+
         [Fact]
         public void TestTicketCreationWitchCreateEvent()
         {

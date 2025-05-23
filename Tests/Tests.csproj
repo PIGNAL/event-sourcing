@@ -18,7 +18,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Ticketing.Command\Application\Core\" />
     <Folder Include="Ticketing.Command\Application\Models\" />
     <Folder Include="Ticketing.Command\Domain\Abstracts\" />
     <Folder Include="Ticketing.Command\Domain\Common\" />

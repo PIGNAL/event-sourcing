@@ -58,12 +58,12 @@ namespace Ticketing.Command.Infrastructure.Persistence
                     EventData = @event,
                 };
                 var topic = _kafkaSettings.Topic?? throw new Exception("Kafka topic is not configured in KafkaSettings.");
-                await AddEventStore(eventModel, cancellationToken);
+                await AddEventStoreAsync(eventModel, cancellationToken);
                 await _eventProducer.ProduceAsync(topic, @event);
             }
         }
 
-        private async Task AddEventStore(EventModel eventModel, CancellationToken cancellationToken)
+        public async Task AddEventStoreAsync(EventModel eventModel, CancellationToken cancellationToken)
         {
             var session = await _eventModelRepository.BeginSessionAsync(cancellationToken);
             try
