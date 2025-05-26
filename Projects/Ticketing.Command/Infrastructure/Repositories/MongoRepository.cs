@@ -11,12 +11,6 @@ namespace Ticketing.Command.Infrastructure.Repositories
     {
         private readonly IMongoCollection<TDocument> _collection;
 
-        //test after
-        //public MongoRepository(IMongoClient mongoClient, IOptions<MongoSettings> options)
-        //{
-        //    _collection = mongoClient.GetDatabase(options.Value.Database)
-        //        .GetCollection<TDocument>(typeof(TDocument).Name);
-        //}
 
         public MongoRepository(IMongoClient mongoClient, IOptions<MongoSettings> options)
         {
